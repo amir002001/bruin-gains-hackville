@@ -14,22 +14,9 @@ const ChatView = () => {
                 <h1> James Wilson </h1>
             </div>
 
-            <div>
-                {/* <Form className="text-form" controlId="{exampleForm.ControlInput1}">
-                    <Form.Control
-                        className="text-form"
-                        type="input"
-                        placeholder="Write a message"
-                        required
-                        onChange={(e) => setMessage(e.target.value)}>
-                    </Form.Control>
-                </Form> */}
-                <form>
-                <label>
-                    <input className="text-form" type="text" name="name" />
-                </label>
-                    <input type="submit" value="Submit" />
-                </form>
+            <div className="write-msg-holder">
+                <input className="text-form" type="text" name="name" />
+                <button className="send-msg"/>
             </div>
         </div>
     )
