@@ -1,0 +1,20 @@
+.chat-page{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.title-name{
+    flex: 1;
+}
+
+.text-form{
+    flex: 13;
+    width: 100%;
+    border-radius: 20px;
+    border: 0 px;
+    background-color: blue;
+    position: relative;
+    top: 625px;
+    height: 58px;
+}

@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import ChatView from './Views/ChatView'
 import Home from './Views/HomeView'
+import CreateSessionView from './Views/CreateSessionView';
 
 
 function App() {
@@ -35,10 +36,9 @@ function App() {
             <Router>
               <div>
                 <Routes>
-                  <Route exact path="/"  element={<Home/>}/>
-                  <Route path="/chatView" element={<ChatView />}>
-                    
-                  </Route>
+                  <Route exact path="/" element={<Home />} />
+                  <Route path="/chatView" element={<ChatView />} />
+                  <Route path="/createSessionView" element={<CreateSessionView />} />
                 </Routes>
               </div>
             </Router>
