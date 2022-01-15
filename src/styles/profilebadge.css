@@ -1,5 +1,67 @@
-.profile-holder{
+.box-container {
+    opacity: 0.95;
+    border: none;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    max-width: 45%;
+    min-width: 45%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 0;
+    margin: 0.1%;
+    border-radius: 10px 10px 10px 10px;
+    transition: all 1s;
+    text-align: left;
+    margin: 6px;
+  }
+  
+  .profiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .profile-item {
+    flex: 1 0 24%;
+  }
+  
+  .profile-holder {
     background-color: blue;
     width: 100%;
     height: 100%;
-}
+    display: flex;
+  }
+  
+  .profile-title {
+    display: flex;
+    /* flex-direction: column; */
+    /* flex: 1; */
+    /* border-radius: 10px 10px 0 0; */
+    margin-left: 12px;
+    /* justify-content: space-around; */
+  }
+  
+  .bg-container {
+    flex: 1.5;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .profile-bg {
+    border-radius: 10px 10px 10px 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .profile-name {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+  }
+  

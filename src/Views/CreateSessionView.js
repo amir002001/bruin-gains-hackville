@@ -1,17 +1,33 @@
-import React, { useState } from "react"
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Dropdown from 'react-bootstrap/Dropdown'
-import { Container, Row, Col } from "react-bootstrap"
-import { FaUserCircle } from "react-icons/fa"
+import React, { useState } from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Container, Row, Col } from "react-bootstrap";
+import { FaUserCircle } from "react-icons/fa";
+import DatePicker from 'react-date-picker';
 
 import '../App.css';
 import '../styles/chatview.css';
+import axios from "axios";
 
 
 const CreateSessionView = () => {
     const [activity, setActivity] = useState("Select activity")
+    const [duration, setDuration] = useState("Set duration")
 
+    const [date, setDate] = useState(new Date())
+    const postSession = () => {
+        axios.post("http://localhost:3004/session",
+            {
+                "participants": [
+                    { id: 2 },
+                    { id: 4 }
+                ],
+                "Date": date,
+                "workout-type": activity,
+                "duration": duration
+            })
+    }
 
     return (
 
@@ -19,11 +35,11 @@ const CreateSessionView = () => {
             <h1 style={{ color: "black", padding: 28, fontSize: 32 }}>Create a Session</h1>
             <Container>
                 <Row>
-                    <Col sm={1}>
-                        <FaUserCircle />
+                    <Col sm={1} className="mx-2">
+                        <FaUserCircle size={50} />
                     </Col>
                     <Col sm={1}>
-                        <FaUserCircle />
+                        <FaUserCircle size={50} className="mx-4" />
                     </Col>
 
                 </Row>
@@ -35,25 +51,21 @@ const CreateSessionView = () => {
                 <Container fluid>
                     <Row>
                         <Form.Group className="mb-3">
-                            <Form.Label>Time</Form.Label>
-                            <br />
-                            <Form.Control type="text" placeholder="Enter time of activity" />
-                        </Form.Group>
-                    </Row>
-
-                    <Row>
-                        <Form.Group className="mb-3">
                             <Form.Label>Date</Form.Label>
                             <br />
-                            <Form.Control type="text" placeholder="Enter date of activity" />
+                            <DatePicker
+                                onChange={setDate}
+                                value={date}
+                            />
+
                         </Form.Group>
                     </Row>
 
                     <Row>
                         <Form.Group className="mb-3">
-                            <Form.Label>Duration</Form.Label>
+                            <Form.Label >Duration</Form.Label>
                             <br />
-                            <Form.Control type="text" placeholder="Enter duration of activity" />
+                            <Form.Control onChange={(e) => setDuration(e.target.value)} type="text" placeholder="Enter duration of activity" />
                         </Form.Group>
                     </Row>
 
@@ -73,8 +85,8 @@ const CreateSessionView = () => {
                         </Dropdown>
                     </Row>
 
-                    <Row>
-                        <Button variant="primary" onClick={() => alert("Clicked")}>
+                    <Row >
+                        <Button className="mt-3" variant="primary" onClick={postSession}>
                             Create Activity
                         </Button>
                     </Row>

@@ -1,12 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import '../App.css';
 import '../styles/chatview.css'
-
+import { getAuth, onAuthStateChanged, getDoc, setDoc, updateDoc, doc, db } from "../Database/firebaseConfig"
 
 const ChatView = () => {
     const [message, setMessage] = useState("")
+    const [currentUser, setCurrentUser] = useState()
+    const auth = getAuth();
     const [comingMessages, setComingMessages] = useState([
         {
             "name": "Adnan",
@@ -28,6 +30,21 @@ const ChatView = () => {
         },
     ])
 
+
+    useEffect(() => {
+        if (localStorage.getItem("Id") === null) {
+            alert("Please login")
+        }
+        const id = localStorage.getItem("Id")
+
+        getDoc(doc(db, "users",  id)).then((res) => 
+        {
+            console.log(res.data())
+            setCurrentUser(res)
+        })
+        .catch((err) => alert(err))
+    },[])
+
     const SendMessage = () => {
         //use fetch on api to add message var when when the button gets clicked
 
@@ -43,19 +60,19 @@ const ChatView = () => {
 
         <div className="chat-page">
             <div className="title-name">
-                <h1> James Wilson </h1>
-
+                <h1> {currentUser?.email} </h1>
+                <h1>{currentUser?.name}</h1>
                 <div>
-                {
-                   
-                    comingMessages.map((msg, idx) => (
-                        <tbody>
-                            
-                            <td style={msg.isMe ? {textAlign:"right", color:"red", paddingLeft: 280} :{textAlign: "left"}} key={idx}>{msg.isMe ? "me" : msg.name}:{msg.message}</td>    
-                        </tbody>
-                    ))
-                    
-                }
+                    {
+
+                        comingMessages.map((msg, idx) => (
+                            <tbody>
+
+                                <td style={msg.isMe ? { textAlign: "right", color: "red", paddingLeft: 280 } : { textAlign: "left" }} key={idx}>{msg.isMe ? "me" : msg.name}:{msg.message}</td>
+                            </tbody>
+                        ))
+
+                    }
                 </div>
 
 

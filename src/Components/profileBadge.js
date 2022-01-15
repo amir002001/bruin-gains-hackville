@@ -1,11 +1,39 @@
-import "../styles/profilebadge.css"
+import "../styles/profilebadge.css";
+import React, { useState, useEffect } from "react";
 
-const profileBadge = () => {
-    return (
-        <div className="profile-holder">
-            <h1>Dave Jones</h1>
+export default function ProfileBadge({
+  id,
+  title,
+  name,
+  thumbnail,
+  icons,
+  index,
+}) {
+  return (
+    <button
+      className="box-container"
+    //   onClick={() => window.open("viewproject/" + index, "_self")}
+    >
+      {/* <img src={thumbnail}></img> */}
+      {/* <div className="bg-container"> */}
+      <div
+        className="profile-bg"
+        style={{
+          background: `url(${thumbnail})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}>
+
+            <div className="profile-title">
+                <p className="profile-name">{name}</p>
+            </div>
         </div>
-    )
-}
 
-export default profileBadge
+    
+      {/* </div> */}
+
+      
+    </button>
+  );
+}
