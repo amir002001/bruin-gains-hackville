@@ -58,8 +58,8 @@ const ChatView = () => {
     }
     return (
         <div className="chat-page">
-            <div className="title-name">
-            <h1 style={{padding: 10}}> best friend </h1>
+            <div className="text-center">
+            <h1 style={{padding: 10}}> John B.</h1>
                 <div>
                     {/* {
 

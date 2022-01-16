@@ -2,11 +2,11 @@
   "user": [
     {
       "id": 1,
-      "first_name": "Luise",
-      "last_name": "Gumn",
-      "email": "lgumn0@naver.com",
-      "gender": "Bigender",
-      "age": 18,
+      "first_name": "Matelda",
+      "last_name": "Canti",
+      "email": "mcanti0@ibm.com",
+      "gender": "Female",
+      "age": 82,
       "faculty": "PSB",
       "level": "intermediate",
       "friends": [
@@ -22,36 +22,8 @@
           "friends": [],
           "goals": "Horizontal cohesive knowledge user",
           "bio": "Universal actuating infrastructure"
-        },
-        {
-          "id": 5,
-          "first_name": "Humfrey",
-          "last_name": "Gemmell",
-          "email": "hgemmell4@jiathis.com",
-          "gender": "Female",
-          "age": 26,
-          "faculty": "FAHCS",
-          "level": "advanced",
-          "friends": [],
-          "goals": "Synergistic optimal access",
-          "bio": "Versatile solution-oriented groupware"
-        },
-        {
-          "id": 6,
-          "first_name": "Dominica",
-          "last_name": "Renney",
-          "email": "drenney5@wikipedia.org",
-          "gender": "Female",
-          "age": 18,
-          "faculty": "FAHCS",
-          "level": "intermediate",
-          "friends": [],
-          "goals": "Versatile explicit standardization",
-          "bio": "Balanced intangible knowledge user"
         }
-      ],
-      "goals": "Team-oriented tangible time-frame",
-      "bio": "Multi-tiered demand-driven knowledge base"
+      ]
     },
     {
       "id": 2,

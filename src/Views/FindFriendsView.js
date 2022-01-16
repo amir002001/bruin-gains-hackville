@@ -37,8 +37,8 @@ const FindFriendsView = () => {
                     return (
                         <ProfileBadge
                             className="profile-item"
-                            key={i}
-                            index={i}
+                            key={i+1}
+                            index={i+1}
                             thumbnail={require(`../images/${user.id}.jpg`)}
                             name={user.firstName}
                             age={user.age}

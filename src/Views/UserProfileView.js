@@ -20,7 +20,7 @@ const UserProfileView = () => {
                 "faculty": "PSB",
                 "level": "intermediate",
                 "friends": [
-                    params.id
+                    user
                 ]
             },
         ).then(response => console.log(response))
@@ -30,10 +30,10 @@ const UserProfileView = () => {
         axios(`http://localhost:3004/user/${params.id}`)
             .then((response) => {
                 setUser(response.data)
-                return response
             }).then((res) => console.log(res))
             .catch((error) => console.error(error))
     }
+
 
     useEffect(() => {
         getProfileInfo()
@@ -47,21 +47,19 @@ const UserProfileView = () => {
             </div>
             <div className="profile-text">
                     {/* <h6>id is {params.id}</h6> */}
-                <h1>
+                <h2>
                     {user?.first_name} {user?.last_name}, {user?.age}
-                </h1>
+                </h2>
                 <div>
-                    <Button onClick={addFriend}>Add Friend</Button>
+                    <Button className='btn-add m-2' variant={"success"} onClick={addFriend}>Add Friend</Button>
                 </div>
                 <Badge pill bg="primary">
                     {user?.level}
                 </Badge>
-                <Badge pill bg="success">
+                <Badge pill bg="secondary">
                     {user?.faculty}
                 </Badge>
-                <h1>About Me</h1>
-                <p>{user?.bio}</p>
-                <h1>My Fitness Goals</h1>
+                <h2>My Fitness Goals</h2>
                 {user?.goals}
             </div>
         </div>
