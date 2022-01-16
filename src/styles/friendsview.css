@@ -1,0 +1,82 @@
+.friend-container {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+
+    opacity: 0.95;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin: 0.1%;
+    border-radius: 10px 10px 10px 10px;
+    transition: all 1s;
+    text-align: left;
+    margin: 6px;
+}
+
+    .friend-item {
+    flex: 1;
+    border: none;
+    }
+
+    .friends-container {
+    width: 100%;
+    min-width: 100%;
+    }
+  
+    /* .friend-holder {
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  } */
+  
+  /* .friend-title {
+    display: flex;
+  } */
+  
+  /* .bg-container {
+    flex: 1.5;
+    width: 100%;
+    height: 100%;
+  } */
+  
+  
+  .friend-bg {
+    border-radius: 10px 10px 10px 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: top;
+  }
+  
+  .friend-name {
+    font-size: 20px;
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .badge {
+  margin: 0 0 10px 8px;
+   font-weight: bold;
+}
+
+  .badge {
+  margin: 0 0 10px 8px;
+}
+
+.friends-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.friends-buttons Button{
+    flex: 1;
+    margin: 10px;
+}

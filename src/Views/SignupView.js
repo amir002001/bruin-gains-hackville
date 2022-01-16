@@ -24,7 +24,7 @@ const SignupView = () => {
             }).then((res) => {
                 localStorage.setItem("isLoggedIn", true)
                 localStorage.setItem("Id", res.id)
-                localStorage.setItem("currentUser", res)
+                localStorage.setItem("currentUser", JSON.stringify(res))
             })
             .then((res) => navigate("/"))
             .catch((err) => alert(err))
@@ -32,7 +32,7 @@ const SignupView = () => {
     return (
         <div className='m-5'>
             <Form.Group className="mb-3" controlId="formName">
-                <Form.Control onChange={(event) => setName(event.target.value)} type="text" onChange={(event) => setEmail(event.target.value)} placeholder="Email" />
+                <Form.Control onChange={(event) => setName(event.target.value)} type="text" placeholder="Name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formEmail">
                 <Form.Control type="text" onChange={(event) => setEmail(event.target.value)} placeholder="Email" />
@@ -40,7 +40,7 @@ const SignupView = () => {
             <Form.Group className="mb-3" controlId="formPassword">
                 <Form.Control onChange={(event) => setPassword(event.target.value)} type="password" placeholder="Password" />
             </Form.Group>
-            <Button onClick={LoginUser} className="mb-3"><FaGoogle /> Login with google</Button>
+            <Button onClick={LoginUser} className="mb-3"><FaGoogle /> Login</Button>
         </div>
 
     )

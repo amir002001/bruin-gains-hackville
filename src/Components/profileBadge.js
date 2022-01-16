@@ -9,6 +9,7 @@ export default function ProfileBadge({
   thumbnail,
   icons,
   index,
+  tags
 }) {
   return (
     <button
@@ -26,16 +27,23 @@ export default function ProfileBadge({
           backgroundRepeat: "no-repeat",
         }}>
 
-            <div className="profile-title">
-                <p className="profile-name">{name}</p>
-            </div>
-            
+        <div className="profile-title">
+          <p className="profile-name">{name}</p>
         </div>
+        <div className="bagdes">
+          <Badge className="badge" pill bg="primary">
+            {tags[1][0].toUpperCase() + tags[1].slice(1)}
+          </Badge>
+          <Badge className="badge" pill bg="secondary">
+            {tags[0]}
+          </Badge>
+        </div>
+      </div>
 
-    
+
       {/* </div> */}
 
-      
+
     </button>
   );
 }

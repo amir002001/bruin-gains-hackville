@@ -17,8 +17,7 @@ import LoginView from './Views/LoginView'
 import SignupView from './Views/SignupView'
 import { Navbar } from 'react-bootstrap';
 import NavBar from './Components/NavBar';
-
-
+import ChatListView from './Views/ChatListViews'
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false)
@@ -56,10 +55,11 @@ function App() {
                 <Route path="/login" element={<LoginView />} />
                 <Route path="/signUp" element={<SignupView />} />
                 <Route path="/chatView" element={<ChatView />} />
-                <Route path="/profileView" element={<UserProfileView />} />
+                <Route exact path="/profiles/:id" element={<UserProfileView />} />
                 <Route path="/createSessionView" element={<CreateSessionView />} />
                 <Route path="/findFriendsView" element={<FindFriendsView />} />
                 <Route path="/friendsView" element={<FriendsView />} />
+                <Route path="/chatList" element={<ChatListView />} />
               </Routes>
               </div>
               <div>

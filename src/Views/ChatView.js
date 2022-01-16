@@ -7,10 +7,13 @@ import { getAuth, onAuthStateChanged, getDoc, setDoc, updateDoc, doc, db, onSnap
 const ChatView = () => {
     const [message, setMessage] = useState("")
     const user = localStorage.getItem("currentUser")
-    const [currentUser, setCurrentUser] = useState(user)
+    const [currentUser, setCurrentUser] = useState(JSON.parse(user))
     const auth = getAuth();
     const id = localStorage.getItem("Id")
-    
+
+    console.log(JSON.parse(user))
+
+
 
     const [comingMessages, setComingMessages] = useState([
         {
@@ -33,23 +36,13 @@ const ChatView = () => {
         },
     ])
 
-     //const unsub =  onSnapshot(doc(db, "users", id)).then((res) => console.log(res))
 
 
+    
 
-
-    // useEffect(() => {
-    //     if (localStorage.getItem("Id") === null) {
-    //         alert("Please login")
-    //     }
-
-    //     getDoc(doc(db, "users",  id)).then((res) => 
-    //     {
-    //         console.log(res.data())
-    //         setCurrentUser(res)
-    //     })
-    //     .catch((err) => alert(err))
-    // },[])
+    useEffect(() => {
+        setCurrentUser(JSON.parse(user))
+    }, [])
 
     const SendMessage = () => {
         //use fetch on api to add message var when when the button gets clicked
@@ -65,8 +58,8 @@ const ChatView = () => {
     return (
         <div className="chat-page">
             <div className="title-name">
-                <h1 style={{color: "black"}}> {currentUser?.name} </h1>
-                <h1>{currentUser?.name}</h1>
+                <h1> {currentUser?.email}  </h1>
+                <h1>{user?.email}</h1>
                 <div>
                     {/* {
 
@@ -85,8 +78,10 @@ const ChatView = () => {
             </div>
 
             <div className="write-msg-holder">
-                <input id="msg-input" onChange={(e) => setMessage(e.target.value)} placeholder="Write a message" className="text-form" type="text" name="name" />
-                <button onClick={SendMessage} className="send-msg" />
+                <Form.Group className="mb-3" controlId="formEmail">
+                <Form.Control id="msg-input" onChange={(e) => setMessage(e.target.value)} type="password" placeholder="Write a message"  type="text" name="name"/>
+            </Form.Group>
+                <Button onClick={SendMessage}> Send Message</Button>
             </div>
         </div>
     )

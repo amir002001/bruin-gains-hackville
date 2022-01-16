@@ -9,9 +9,14 @@ import DatePicker from 'react-date-picker';
 import '../App.css';
 import '../styles/chatview.css';
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-
+// /createSession/:friendId
 const CreateSessionView = () => {
+    let [user, setUser] = useState()
+
+
+    const params = useParams()
     const [activity, setActivity] = useState("Select activity")
     const [duration, setDuration] = useState("Set duration")
 
@@ -20,10 +25,10 @@ const CreateSessionView = () => {
         axios.post("http://localhost:3004/session",
             {
                 "participants": [
-                    { id: 2 },
-                    { id: 4 }
+                    { id: 1 },
+                    { id: params.id }
                 ],
-                "Date": date,
+                "Date": date.getTime(),
                 "workout-type": activity,
                 "duration": duration
             })
@@ -77,7 +82,7 @@ const CreateSessionView = () => {
 
                             <Dropdown.Menu>
                                 <Dropdown.Item onClick={() => setActivity("Cardio")}>Cardio</Dropdown.Item>
-                                <Dropdown.Item onClick={() => setActivity("Strength training")}>Strength training</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setActivity("strength-training")}>Strength training</Dropdown.Item>
                                 <Dropdown.Item onClick={() => setActivity("Yoga")}>Yoga</Dropdown.Item>
                                 <Dropdown.Item onClick={() => setActivity("Cycling")}>Cycling</Dropdown.Item>
                                 <Dropdown.Item onClick={() => setActivity("Swimming")}>Swimming</Dropdown.Item>

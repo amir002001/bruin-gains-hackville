@@ -1,10 +1,13 @@
+import React, { useState, useEffect } from 'react'
 import axios from "axios"
 import { Button } from "react-bootstrap"
 import { Badge } from "react-bootstrap"
+import { useParams } from "react-router-dom"
 
 
 const UserProfileView = () => {
-
+    let params = useParams()
+    const [user, setUser] = useState()
     const addFriend = () => {
         axios.put("http://localhost:3004/user/1",
             {
@@ -18,43 +21,48 @@ const UserProfileView = () => {
                 "level": "intermediate",
                 "friends": [
                     {
-                        "id": 2,
-                        "first_name": "Dot",
-                        "last_name": "Povall",
-                        "email": "dpovall1@newyorker.com",
-                        "gender": "Male",
-                        "age": 18,
-                        "faculty": "PSB",
-                        "level": "beginner",
-                        "friends": []
+                        "id": 2
                     }
                 ]
             },
         ).then(response => console.log(response))
     }
 
+    const getProfileInfo = () => {
+        axios(`http://localhost:3004/user/${params.id}`)
+            .then((response) => {
+                setUser(response.data)
+                return response
+            }).then((res) => console.log(res))
+            .catch((error) => console.error(error))
+    }
+
+    useEffect(() => {
+        getProfileInfo()
+    }, [])
+
+
     return (
         <div>
             <img src={require("../images/david-laid.jpg")} width={200}>
             </img>
+            <h6>id is {params.id}</h6>
             <h1>
-                David Laid, 23
+                {user?.first_name} {user?.last_name}, {user?.age}
             </h1>
             <div>
                 <Button onClick={addFriend}>Add Friend</Button>
             </div>
             <Badge pill bg="primary">
-                Beginner
-            </Badge>
-            <Badge pill bg="secondary">
-                Lose Weight
+                {user?.level}
             </Badge>
             <Badge pill bg="success">
-                FAAD
+                {user?.faculty}
             </Badge>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!</p>
+            <h1>About Me</h1>
+            <p>{user?.bio}</p>
             <h1>My Fitness Goals</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!</p>
+            {user?.goals}
         </div>
     )
 }
