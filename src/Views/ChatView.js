@@ -3,12 +3,15 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import '../App.css';
 import '../styles/chatview.css'
-import { getAuth, onAuthStateChanged, getDoc, setDoc, updateDoc, doc, db } from "../Database/firebaseConfig"
-
+import { getAuth, onAuthStateChanged, getDoc, setDoc, updateDoc, doc, db, onSnapshot } from "../Database/firebaseConfig"
 const ChatView = () => {
     const [message, setMessage] = useState("")
-    const [currentUser, setCurrentUser] = useState()
+    const user = localStorage.getItem("currentUser")
+    const [currentUser, setCurrentUser] = useState(user)
     const auth = getAuth();
+    const id = localStorage.getItem("Id")
+    
+
     const [comingMessages, setComingMessages] = useState([
         {
             "name": "Adnan",
@@ -30,20 +33,23 @@ const ChatView = () => {
         },
     ])
 
+     //const unsub =  onSnapshot(doc(db, "users", id)).then((res) => console.log(res))
 
-    useEffect(() => {
-        if (localStorage.getItem("Id") === null) {
-            alert("Please login")
-        }
-        const id = localStorage.getItem("Id")
 
-        getDoc(doc(db, "users",  id)).then((res) => 
-        {
-            console.log(res.data())
-            setCurrentUser(res)
-        })
-        .catch((err) => alert(err))
-    },[])
+
+
+    // useEffect(() => {
+    //     if (localStorage.getItem("Id") === null) {
+    //         alert("Please login")
+    //     }
+
+    //     getDoc(doc(db, "users",  id)).then((res) => 
+    //     {
+    //         console.log(res.data())
+    //         setCurrentUser(res)
+    //     })
+    //     .catch((err) => alert(err))
+    // },[])
 
     const SendMessage = () => {
         //use fetch on api to add message var when when the button gets clicked
@@ -57,13 +63,12 @@ const ChatView = () => {
         //fetch from api and add to comingMessages list
     }
     return (
-
         <div className="chat-page">
             <div className="title-name">
-                <h1> {currentUser?.email} </h1>
+                <h1 style={{color: "black"}}> {currentUser?.name} </h1>
                 <h1>{currentUser?.name}</h1>
                 <div>
-                    {
+                    {/* {
 
                         comingMessages.map((msg, idx) => (
                             <tbody>
@@ -72,7 +77,7 @@ const ChatView = () => {
                             </tbody>
                         ))
 
-                    }
+                    } */}
                 </div>
 
 

@@ -1,7 +1,9 @@
 import "../styles/profilebadge.css";
 import React, { useState, useEffect } from "react";
+import { Badge } from "react-bootstrap"
 
-export default function ProfileBadge({
+
+export default function SessionBadge({
   id,
   date,
   thumbnail,
@@ -14,8 +16,6 @@ export default function ProfileBadge({
       className="session-container"
     //   onClick={() => window.open("viewproject/" + index, "_self")}
     >
-      {/* <img src={thumbnail}></img> */}
-      {/* <div className="bg-container"> */}
       <div
         className="session-bg"
         style={{
@@ -23,17 +23,14 @@ export default function ProfileBadge({
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-        }}>
-
-            <div className="session-title">
-                <p className="session-name">{name}</p>
-            </div>
+        }}
+      >
+        <div className="session-title">
+          <p className="session-date">{date}</p>
         </div>
+      </div>
 
-    
       {/* </div> */}
-
-      
     </button>
   );
 }

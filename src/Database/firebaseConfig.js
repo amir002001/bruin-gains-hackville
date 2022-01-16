@@ -14,7 +14,7 @@
 import * as firebase from "firebase/app"
 import {signInWithEmailAndPassword,createUserWithEmailAndPassword, getAuth, onAuthStateChanged} from "firebase/auth"
 import Firestore from 'firebase/database';
-import { doc, setDoc, getDoc, updateDoc } from "firebase/firestore"; 
+import { doc, setDoc, getDoc, updateDoc, onSnapshot } from "firebase/firestore"; 
 import { getFirestore } from 'firebase/firestore';
 
 
@@ -34,4 +34,4 @@ export {signInWithEmailAndPassword}
 export {getAuth, onAuthStateChanged}
 export {createUserWithEmailAndPassword}
 export {db}
-export {doc, setDoc,  getDoc, updateDoc }
+export {doc, setDoc,  getDoc, updateDoc, onSnapshot }

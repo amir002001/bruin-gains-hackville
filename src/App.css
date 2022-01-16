@@ -4,11 +4,10 @@ html {
 }
 
 body {
-    background-image: url('./images/sheridan.webp');
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('./images/sheridan.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
 }
 .bottom {
     position: fixed;
@@ -23,10 +22,45 @@ body {
     height: 100vh;
     display: flex;
     flex-shrink: 0;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+}
+
+.app-container{
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .screen {
     height: 100%;
 }
+
+.App *::-webkit-scrollbar {
+    display: none;
+  }
+
+.title {
+    margin-right: 30px;
+}
+
+.title h1 {
+    color: white;
+}
+
+/* ::-webkit-scrollbar-track {
+    border-radius: 0.125rem;
+    background-color: lightgray;
+}
+
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+    border-radius: 0.125rem;
+}
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.125rem;
+    background-color: gray;
+}; */
+  

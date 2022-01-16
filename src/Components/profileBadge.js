@@ -1,5 +1,6 @@
 import "../styles/profilebadge.css";
 import React, { useState, useEffect } from "react";
+import { Badge } from "react-bootstrap"
 
 export default function ProfileBadge({
   id,
@@ -28,6 +29,7 @@ export default function ProfileBadge({
             <div className="profile-title">
                 <p className="profile-name">{name}</p>
             </div>
+            
         </div>
 
     

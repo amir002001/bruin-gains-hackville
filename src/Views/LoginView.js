@@ -13,6 +13,8 @@ const LoginView = () => {
             .then((res) => {
                 localStorage.setItem("isLoggedIn", true)
                 localStorage.setItem("Id", res.user.uid)
+                localStorage.setItem("currentUser", res.user)
+
             })
             .then(navigate("/"))
             .catch((err) => alert(err))

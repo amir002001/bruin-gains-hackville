@@ -24,10 +24,10 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false)
   return (
     <div className="App">
-      <div>
+      <div className='title'>
         <h1>Bruin Gains</h1>
         <h1>Created by: Amir, Adnan, Burhan and Mike</h1>
-        <img src={require("./images/Bruno.png")}></img>
+        <img width={600} src={require("./images/Bruno.png")}></img>
       </div>
 
       <div className="marvel-device iphone-x">
@@ -48,19 +48,23 @@ function App() {
         <div className="inner-shadow"></div>
         <div className="screen">
           <Router>
-            <div>
+            <div className="app-container">
+              <div>
               <Routes>
 
                 <Route exact path="/" element={<Home />} />
                 <Route path="/login" element={<LoginView />} />
-                <Route path="/signup" element={<SignupView />} />
+                <Route path="/signUp" element={<SignupView />} />
                 <Route path="/chatView" element={<ChatView />} />
                 <Route path="/profileView" element={<UserProfileView />} />
                 <Route path="/createSessionView" element={<CreateSessionView />} />
                 <Route path="/findFriendsView" element={<FindFriendsView />} />
                 <Route path="/friendsView" element={<FriendsView />} />
               </Routes>
+              </div>
+              <div>
               <NavBar></NavBar>
+              </div>
             </div>
           </Router>
         </div>
