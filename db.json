@@ -9,7 +9,47 @@
       "age": 18,
       "faculty": "PSB",
       "level": "intermediate",
-      "friends": [3, 5, 8, 9],
+      "friends": [
+        {
+          "id": 2,
+          "first_name": "Bernadine",
+          "last_name": "Leitche",
+          "email": "bleitche1@sogou.com",
+          "gender": "Polygender",
+          "age": 26,
+          "faculty": "FAHCS",
+          "level": "advanced",
+          "friends": [],
+          "goals": "Horizontal cohesive knowledge user",
+          "bio": "Universal actuating infrastructure"
+        },
+        {
+          "id": 5,
+          "first_name": "Humfrey",
+          "last_name": "Gemmell",
+          "email": "hgemmell4@jiathis.com",
+          "gender": "Female",
+          "age": 26,
+          "faculty": "FAHCS",
+          "level": "advanced",
+          "friends": [],
+          "goals": "Synergistic optimal access",
+          "bio": "Versatile solution-oriented groupware"
+        },
+        {
+          "id": 6,
+          "first_name": "Dominica",
+          "last_name": "Renney",
+          "email": "drenney5@wikipedia.org",
+          "gender": "Female",
+          "age": 18,
+          "faculty": "FAHCS",
+          "level": "intermediate",
+          "friends": [],
+          "goals": "Versatile explicit standardization",
+          "bio": "Balanced intangible knowledge user"
+        }
+      ],
       "goals": "Team-oriented tangible time-frame",
       "bio": "Multi-tiered demand-driven knowledge base"
     },
@@ -87,7 +127,10 @@
       "age": 26,
       "faculty": "FAST",
       "level": "beginner",
-      "friends": [1, 5],
+      "friends": [
+        1,
+        5
+      ],
       "goals": "Horizontal national framework",
       "bio": "Distributed foreground focus group"
     },
@@ -134,70 +177,100 @@
   "session": [
     {
       "id": 1,
-      "participants": [],
+      "participants": [
+        1,
+        5
+      ],
       "date": "1642392099",
       "duration": 52,
       "workout-type": "strength-training"
     },
     {
       "id": 2,
-      "participants": [],
+      "participants": [
+        1,
+        6
+      ],
       "date": "1642299709",
       "duration": 66,
       "workout-type": "cycling"
     },
     {
       "id": 3,
-      "participants": [],
+      "participants": [
+        1,
+        7
+      ],
       "date": "1643276434",
       "duration": 37,
       "workout-type": "cycling"
     },
     {
       "id": 4,
-      "participants": [],
+      "participants": [
+        1,
+        8
+      ],
       "date": "1643007089",
       "duration": 43,
       "workout-type": "yoga"
     },
     {
       "id": 5,
-      "participants": [],
+      "participants": [
+        1,
+        9
+      ],
       "date": "1642983895",
       "duration": 52,
       "workout-type": "cycling"
     },
     {
       "id": 6,
-      "participants": [],
+      "participants": [
+        1,
+        10
+      ],
       "date": "1644875222",
       "duration": 30,
       "workout-type": "yoga"
     },
     {
       "id": 7,
-      "participants": [],
+      "participants": [
+        1,
+        5
+      ],
       "date": "1642996053",
       "duration": 73,
       "workout-type": "yoga"
     },
     {
       "id": 8,
-      "participants": [],
+      "participants": [
+        1,
+        3
+      ],
       "date": "1644683449",
       "duration": 109,
       "workout-type": "swimming"
     },
     {
       "id": 9,
-      "participants": [],
+      "participants": [
+        1,
+        2
+      ],
       "date": "1643952781",
       "duration": 105,
       "workout-type": "cycling"
     },
     {
       "id": 10,
-      "participants": [],
+      "participants": [
+        1,
+        1
+      ],
       "date": "1642704704",
       "duration": 80,
       "workout-type": "strength-training"
@@ -207,49 +280,131 @@
     {
       "id": 1,
       "chatMembers": [
-          1,
-          2
+        {
+          "id": 1,
+          "first_name": "Luise",
+          "last_name": "Gumn",
+          "email": "lgumn0@naver.com",
+          "gender": "Bigender",
+          "age": 18,
+          "faculty": "PSB",
+          "level": "intermediate"
+        },
+        {
+          "id": 5,
+          "first_name": "Humfrey",
+          "last_name": "Gemmell",
+          "email": "hgemmell4@jiathis.com",
+          "gender": "Female",
+          "age": 26,
+          "faculty": "FAHCS",
+          "level": "advanced",
+          "friends": [],
+          "goals": "Synergistic optimal access",
+          "bio": "Versatile solution-oriented groupware"
+        }
       ],
-      "chatMembersNames" : [
-        {"1" : ""}
+      "chatMembersNames": [
+        {
+          "id": 1,
+          "first_name": "Luise",
+          "last_name": "Gumn",
+          "email": "lgumn0@naver.com",
+          "gender": "Bigender",
+          "age": 18,
+          "faculty": "PSB",
+          "level": "intermediate"
+        },
+        {
+          "id": 7,
+          "first_name": "Manuel",
+          "last_name": "Penella",
+          "email": "mpenella6@w3.org",
+          "gender": "Female",
+          "age": 26,
+          "faculty": "FAST",
+          "level": "beginner",
+          "goals": "Horizontal national framework",
+          "bio": "Distributed foreground focus group"
+        }
       ],
       "chatHistory": [
-          {
-              "id": 18,
-              "message": "Wanna go out tomorrow?",
-              "sentBy": "lgumn0@naver.com"
-          }
-      ]
-  },
-
-  {
-    "id": 2,
-    "chatMembers": [
-        1,
-        3
-    ],
-    "chatHistory": [
         {
-            "id": 18,
-            "message": "What's up",
-            "sentBy": "nlindroos0@google.co.uk"
+          "id": 18,
+          "message": "Wanna go out tomorrow?",
+          "sentBy": "lgumn0@naver.com"
         }
-    ]
-},
-
-{
-  "id": 3,
-  "chatMembers": [
-      1,
-      4
-  ],
-  "chatHistory": [
-      {
+      ]
+    },
+    {
+      "id": 2,
+      "chatMembers": [
+        {
+          "id": 1,
+          "first_name": "Luise",
+          "last_name": "Gumn",
+          "email": "lgumn0@naver.com",
+          "gender": "Bigender",
+          "age": 18,
+          "faculty": "PSB",
+          "level": "intermediate"
+        },
+        {
+          "id": 3,
+          "first_name": "Brinna",
+          "last_name": "Chazelas",
+          "email": "bchazelas2@umn.edu",
+          "gender": "Male",
+          "age": 24,
+          "faculty": "FAST",
+          "level": "intermediate",
+          "friends": [],
+          "goals": "Mandatory needs-based encryption",
+          "bio": "Innovative actuating firmware"
+        }
+      ],
+      "chatHistory": [
+        {
+          "id": 18,
+          "message": "What's up",
+          "sentBy": "nlindroos0@google.co.uk"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chatMembers": [
+        {
+          "id": 1,
+          "first_name": "Luise",
+          "last_name": "Gumn",
+          "email": "lgumn0@naver.com",
+          "gender": "Bigender",
+          "age": 18,
+          "faculty": "PSB",
+          "level": "intermediate"
+        },
+        {
+          "id": 8,
+          "first_name": "Elias",
+          "last_name": "Andreou",
+          "email": "eandreou7@quantcast.com",
+          "gender": "Male",
+          "age": 19,
+          "faculty": "PSB",
+          "level": "advanced",
+          "friends": [],
+          "goals": "Advanced national collaboration",
+          "bio": "Managed systematic encoding"
+        }
+      ],
+      "chatHistory": [
+        {
           "id": 18,
           "message": "Did you study stats quiz?",
           "sentBy": "bchazelas2@umn.edu"
-      }
-  ]
-}
+        }
+      ]
+    }
   ]
 }

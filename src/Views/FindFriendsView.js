@@ -20,8 +20,6 @@ const FindFriendsView = () => {
             console.log(resp.data)
             setUsers(resp.data);
         })
-
-
     }, [])
 
     return (
@@ -32,15 +30,15 @@ const FindFriendsView = () => {
                 {/* <h1> Discover</h1>
                 <IoOptions size={30}/> */}
             </div>
-
+            
             <div className="profiles-container">
 
                 {users.map((user, i) => {
                     return (
                         <ProfileBadge
                             className="profile-item"
-                            // key={i}
-                            // index={i}
+                            key={i}
+                            index={i}
                             thumbnail={require(`../images/${user.id}.jpg`)}
                             name={user.firstName}
                             age={user.age}
@@ -49,43 +47,6 @@ const FindFriendsView = () => {
                     )
                 }
                 )}
-                {/* 
-                <ProfileBadge
-                    className="profile-item"
-                    // key={i}
-                    // index={i}
-                    thumbnail={1}
-                    name="Jon Smith"
-                    age="23"
-                    tags={["lose weight", "intermediate"]}
-                />
-                <ProfileBadge
-                    className="profile-item"
-                    // key={i}
-                    // index={i}
-                    thumbnail={1}
-                    name="Jon Smith"
-                    age="23"
-                    tags={["lose weight", "intermediate"]}
-                />
-                <ProfileBadge
-                    className="profile-item"
-                    // key={i}
-                    // index={i}
-                    thumbnail={1}
-                    name="Jon Smith"
-                    age="23"
-                    tags={["lose weight", "intermediate"]}
-                />
-                <ProfileBadge
-                    className="profile-item"
-                    // key={i}
-                    // index={i}
-                    thumbnail={1}
-                    name="Jon Smith"
-                    age="23"
-                    tags={["lose weight", "intermediate"]} />*/}
-
             </div>
         </div>
     )

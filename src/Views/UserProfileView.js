@@ -3,7 +3,7 @@ import axios from "axios"
 import { Button } from "react-bootstrap"
 import { Badge } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-
+import "../styles/profile.css"
 
 const UserProfileView = () => {
     let params = useParams()
@@ -20,9 +20,7 @@ const UserProfileView = () => {
                 "faculty": "PSB",
                 "level": "intermediate",
                 "friends": [
-                    {
-                        "id": 2
-                    }
+                    params.id
                 ]
             },
         ).then(response => console.log(response))
@@ -43,26 +41,30 @@ const UserProfileView = () => {
 
 
     return (
-        <div>
-            <img src={require("../images/david-laid.jpg")} width={200}>
-            </img>
-            <h6>id is {params.id}</h6>
-            <h1>
-                {user?.first_name} {user?.last_name}, {user?.age}
-            </h1>
-            <div>
-                <Button onClick={addFriend}>Add Friend</Button>
+        <div className="profile-page">
+            <div className='profile-photo'>
+                <img src={require(`../images/${params.id}.jpg`)} width='100%'/>
             </div>
-            <Badge pill bg="primary">
-                {user?.level}
-            </Badge>
-            <Badge pill bg="success">
-                {user?.faculty}
-            </Badge>
-            <h1>About Me</h1>
-            <p>{user?.bio}</p>
-            <h1>My Fitness Goals</h1>
-            {user?.goals}
+            <div className="profile-text">
+                    {/* <h6>id is {params.id}</h6> */}
+                <h1>
+                    {user?.first_name} {user?.last_name}, {user?.age}
+                </h1>
+                <div>
+                    <Button onClick={addFriend}>Add Friend</Button>
+                </div>
+                <Badge pill bg="primary">
+                    {user?.level}
+                </Badge>
+                <Badge pill bg="success">
+                    {user?.faculty}
+                </Badge>
+                <h1>About Me</h1>
+                <p>{user?.bio}</p>
+                <h1>My Fitness Goals</h1>
+                {user?.goals}
+            </div>
+            
         </div>
     )
 }

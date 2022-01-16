@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <div className='title'>
         <h1>Bruin Gains</h1>
-        <h1>Created by: Amir, Adnan, Burhan and Mike</h1>
+        <h2>Created by: Amir, Adnan, Burhan and Mike</h2>
         <img width={600} src={require("./images/Bruno.png")}></img>
       </div>
 

@@ -9,6 +9,7 @@ export default function ProfileBadge({
   thumbnail,
   icons,
   index,
+  tags
 }) {
   return (
     <button
@@ -20,7 +21,7 @@ export default function ProfileBadge({
       <div
         className="friend-bg"
         style={{
-          background: `url(${thumbnail})`,
+          background: `linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%), url(${thumbnail})`,
           backgroundPosition: "top",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -30,12 +31,12 @@ export default function ProfileBadge({
                 <p className="friend-name">{name}</p>
             </div>
             <div className="bagdes">
-              <Badge className="badge" pill bg="primary">
-                  Lose Weight
-              </Badge>
-              <Badge className="badge" pill bg="secondary">
-                  FAAD
-              </Badge>
+            <Badge className="badge" pill bg="primary">
+            {tags[1][0].toUpperCase() + tags[1].slice(1)}
+          </Badge>
+          <Badge className="badge" pill bg="secondary">
+            {tags[0]}
+          </Badge>
             </div>
             <div className="friends-buttons">
                 <Button>

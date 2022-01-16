@@ -8,6 +8,7 @@ import p3 from "../images/3.jpg";
 import ProfileBadge from "../Components/profileBadge";
 import "../styles/sessionbadge.css";
 import axios from "axios";
+import { Link } from "react-router-dom"
 
 const HomeView = () => {
   
@@ -60,7 +61,7 @@ const HomeView = () => {
             key={i}
             index={i}
             date={`${date.toLocaleDateString("en-US", options)}`}
-            partner={session.partner}
+            partner={session.participants[1]}
             thumbnail={require(`../images/${session['workout-type']}.jpg`)}
             workouttype="cardio"
             tags={["lose weight", "intermediate"]}
@@ -77,7 +78,9 @@ const HomeView = () => {
       >
         {users.map((user, i)=> {
           return (
-          <ProfileBadge
+          <Link to={"/createSessionView"}>
+  <ProfileBadge
+          
           className="profile-item"
           key={i}
           index={i}
@@ -85,7 +88,11 @@ const HomeView = () => {
           name={user.first_name}
           age={user.age}
           tags={[user.faculty,user.level]}
+          friendId={user.id}
+          
         />
+         </Link>
+          
         )}
       )}
         

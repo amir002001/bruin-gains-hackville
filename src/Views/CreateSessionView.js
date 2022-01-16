@@ -81,11 +81,11 @@ const CreateSessionView = () => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item onClick={() => setActivity("Cardio")}>Cardio</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setActivity("cardio")}>Cardio</Dropdown.Item>
                                 <Dropdown.Item onClick={() => setActivity("strength-training")}>Strength training</Dropdown.Item>
-                                <Dropdown.Item onClick={() => setActivity("Yoga")}>Yoga</Dropdown.Item>
-                                <Dropdown.Item onClick={() => setActivity("Cycling")}>Cycling</Dropdown.Item>
-                                <Dropdown.Item onClick={() => setActivity("Swimming")}>Swimming</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setActivity("yoga")}>Yoga</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setActivity("cycling")}>Cycling</Dropdown.Item>
+                                <Dropdown.Item onClick={() => setActivity("swimming")}>Swimming</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Row>

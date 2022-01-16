@@ -28,6 +28,14 @@ export default function SessionBadge({
         <div className="session-title">
           <p className="session-date">{date}</p>
         </div>
+        <div className={"session-icon"}
+          style={{
+            background: `url(${require(`../images/${partner}.jpg`)})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}>
+        </div>
       </div>
 
       {/* </div> */}

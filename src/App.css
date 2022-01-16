@@ -45,6 +45,6 @@ body {
     margin-right: 30px;
 }
 
-.title h1 {
+.title h1,.title h2 {
     color: whitesmoke;
 }

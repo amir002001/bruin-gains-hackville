@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import '../App.css';
 import '../styles/chatview.css'
 import { getAuth, onAuthStateChanged, getDoc, setDoc, updateDoc, doc, db, onSnapshot } from "../Database/firebaseConfig"
+import { IoSend } from "react-icons/io5";
 const ChatView = () => {
     const [message, setMessage] = useState("")
     const user = localStorage.getItem("currentUser")
@@ -58,8 +59,7 @@ const ChatView = () => {
     return (
         <div className="chat-page">
             <div className="title-name">
-                <h1> {currentUser?.email}  </h1>
-                <h1>{user?.email}</h1>
+            <h1 style={{padding: 10}}> best friend </h1>
                 <div>
                     {/* {
 
@@ -73,15 +73,15 @@ const ChatView = () => {
                     } */}
                 </div>
 
-
+                    
 
             </div>
 
-            <div className="write-msg-holder">
-                <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Control id="msg-input" onChange={(e) => setMessage(e.target.value)} type="password" placeholder="Write a message"  type="text" name="name"/>
+            <div className="write-message-holder">
+                <Form.Group  controlId="formEmail">
+                <Form.Control onChange={(e) => setMessage(e.target.value)} type="password" placeholder="Write a message"  type="text" name="name"/>
             </Form.Group>
-                <Button onClick={SendMessage}> Send Message</Button>
+                <Button onClick={SendMessage}> <IoSend/></Button>
             </div>
         </div>
     )

@@ -8,11 +8,10 @@
     flex: 1;
 }
 
-.write-msg-holder{
+.write-message-holder{
     display: flex;
-    position: relative;
-    top: 625px;
-    height: 58px;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .text-form{

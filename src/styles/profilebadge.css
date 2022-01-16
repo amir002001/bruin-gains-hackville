@@ -3,11 +3,12 @@
     border: none;
     padding: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     height: 220px;
-    max-width: 45%;
-    min-width: 45%;
+    /* max-width: 45%;
+    min-width: 45%; */
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     padding: 0;
@@ -26,6 +27,8 @@
   
   .profile-item {
     flex: 1 0 24%;
+    width: 100%;
+    height: 100%;
   }
   
   .profile-holder {
@@ -64,4 +67,8 @@
 
   .badge {
   margin: 0 0 10px 8px;
+}
+
+.profiles-container{
+  width: 48%;
 }
