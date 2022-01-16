@@ -1,13 +1,13 @@
 .profile-photo{
-    flex: 1;
+    width: 100%;
 }
 
-.profile-photo{
-    flex: 1;
-    opacity: 0;
+.profile-text{
 }
 
 .profile-page{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    /* height: 100%; */
+    /* flex-direction: column; */
 }
+

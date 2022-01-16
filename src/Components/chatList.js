@@ -3,14 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Badge, Button } from "react-bootstrap"
 import { Link } from "react-router-dom";
 
-export default function ProfileBadge({
-  id,
-  title,
+export default function ChatList({
   name,
-  thumbnail,
   icons,
   index,
-  tags
+  thumbnail
 }) {
   return (
     <button
@@ -32,24 +29,14 @@ export default function ProfileBadge({
           <p className="friend-name">{name}</p>
         </div>
         <div className="bagdes">
-          <Badge className="badge" pill bg="primary">
-            {tags[1][0].toUpperCase() + tags[1].slice(1)}
-          </Badge>
-          <Badge className="badge" pill bg="secondary">
-            {tags[0]}
-          </Badge>
+
         </div>
         <div className="friends-buttons">
           <Link to={"/chatview"}>
             <Button>
-              Send Message
+              3 Messages. Chat
             </Button>
           </Link>
-          <Link to={"/createsessionview"}>
-            <Button>
-              Plan a Session
-            </Button>
-            </Link>
         </div>
       </div>
 

@@ -16,9 +16,9 @@ const NavBar = () => {
             <Link to={"/FriendsView"}>
                 <GiThreeFriends size={30} />
             </Link>
-            <Link to={"/ChatView"}>
+            {/* <Link to={"/ChatView"}>
                 <IoChatbubbles size={30} />
-            </Link>
+            </Link> */}
         </div>
     )
 }

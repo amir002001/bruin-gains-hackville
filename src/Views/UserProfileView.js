@@ -43,7 +43,7 @@ const UserProfileView = () => {
     return (
         <div className="profile-page">
             <div className='profile-photo'>
-                <img src={require(`../images/${params.id}.jpg`)} width='100%'/>
+                <img width='100%' src={require(`../images/${params.id}.jpg`)}/>
             </div>
             <div className="profile-text">
                     {/* <h6>id is {params.id}</h6> */}
@@ -64,7 +64,6 @@ const UserProfileView = () => {
                 <h1>My Fitness Goals</h1>
                 {user?.goals}
             </div>
-            
         </div>
     )
 }

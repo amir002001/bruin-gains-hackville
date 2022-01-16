@@ -18,7 +18,7 @@ const FindFriendsView = () => {
         axios.get("http://localhost:3004/user").then((resp) => {
             resp.data.sort(shuffleUsers);
             console.log(resp.data)
-            setUsers(resp.data);
+            setUsers(resp.data.slice(0,3));
         })
     }, [])
 
@@ -30,7 +30,7 @@ const FindFriendsView = () => {
                 {/* <h1> Discover</h1>
                 <IoOptions size={30}/> */}
             </div>
-            
+
             <div className="profiles-container">
 
                 {users.map((user, i) => {
